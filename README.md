@@ -5,11 +5,11 @@
 <img width="639" alt="4" src="https://user-images.githubusercontent.com/81476500/126040983-fd1e7047-4184-4925-87c8-478a3ba73581.png">
 <img width="534" alt="5" src="https://user-images.githubusercontent.com/81476500/126040984-6bc94c66-6e69-48ed-84f8-32506f575e15.png">
 
-#This section is new August the 18 in 2021;
+
 
 _____________________________________________________________________________________________________________________________
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/81476500/129949536-2d4fe584-d9b8-470d-85a8-f121d50e7a43.gif)
-
-____________________________________________________________________________________________________________________________
+#This section is new August the 18 in 2021; (enums,first order functions,Dart Maps,Tenary Operations etc...)
 //link = https://dartpad.dev/?id=5df5577bf60f3429b7bd8288474f0d39&null_safety=true
+____________________________________________________________________________________________________________________________
+
 
