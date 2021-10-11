@@ -1,0 +1,501 @@
+[1mdiff --git a/bin/1nd_tutorial_basics_v1.dart b/bin/1nd_tutorial_basics_v1.dart[m
+[1mdeleted file mode 100644[m
+[1mindex 536fdfc..0000000[m
+[1m--- a/bin/1nd_tutorial_basics_v1.dart[m
+[1m+++ /dev/null[m
+[36m@@ -1,419 +0,0 @@[m
+[31m-// ignore: unused_import[m
+[31m-import 'dart:ffi';[m
+[31m-import 'dart:math';[m
+[31m-import 'dart:io';[m
+[31m-[m
+[31m-void main() => Game();[m
+[31m-[m
+[31m-//oob -> create your own data type with class[m
+[31m-// how to create a constructor in the class.[m
+[31m-class Book {[m
+[31m-  Book(String name, String author, int numPages, bool isThick,[m
+[31m-      String whatKindOf) {[m
+[31m-    this.name = name;[m
+[31m-    this.author = author;[m
+[31m-    this.numPages = numPages;[m
+[31m-    this.isThick = isThick;[m
+[31m-    this.whatKindOf = whatKindOf;[m
+[31m-  }[m
+[31m-  String? name;[m
+[31m-  String? author;[m
+[31m-  int? numPages;[m
+[31m-  bool? isThick;[m
+[31m-  String? whatKindOf;[m
+[31m-}[m
+[31m-[m
+[31m-void objectOrientedTraining(int howMuchPrinting) {[m
+[31m-  Book hp = Book("Harry Potter - Sorcerrer's Stone", "JK Rowling", 450, true,[m
+[31m-      "Fantastic Novel");[m
+[31m-  Book oms = Book([m
+[31m-      "The Old Man and The Sea", //its name[m
+[31m-      "Ernest Hemingway", //author[m
+[31m-      187, //numPages[m
+[31m-      false, //thick or thin?[m
+[31m-      "Classic Novel"); //what kind of book[m
+[31m-[m
+[31m-  List<Book> books = [hp, oms];[m
+[31m-[m
+[31m-  for (int i = 0; i < howMuchPrinting; i++) {[m
+[31m-    int randomInt = Random().nextInt(2);[m
+[31m-    print(books[randomInt].name.toString());[m
+[31m-  }[m
+[31m-[m
+[31m-  /*Book OMS = Book();[m
+[31m-  OMS.name = "The Old Man and The Sea";[m
+[31m-  OMS.author = "Ernest Hemingway";[m
+[31m-  OMS.numPages = 187;[m
+[31m-  OMS.isThick = false;[m
+[31m-  OMS.whatKindOf = "Novel";[m
+[31m-[m
+[31m-  print(OMS.name! +[m
+[31m-      OMS.author.toString() +[m
+[31m-      " " +[m
+[31m-      OMS.numPages.toString() +[m
+[31m-      " " +[m
+[31m-      "isTheBookThick? = " +[m
+[31m-      " " +[m
+[31m-      OMS.isThick!.toString() +[m
+[31m-      " " +[m
+[31m-      "What kind of book is it? = " +[m
+[31m-      OMS.whatKindOf!); */[m
+[31m-}[m
+[31m-[m
+[31m-void whileLoop(String string, int num) {[m
+[31m-  //how to use while loop?[m
+[31m-  List<String> stringList = [];[m
+[31m-  int i = 0;[m
+[31m-  while (i < num) {[m
+[31m-    stringList.add(string + i.toString());[m
+[31m-    i++;[m
+[31m-  }[m
+[31m-  print("there are " + stringList.length.toString() + "objects in the list.");[m
+[31m-  //how to use for loop?[m
+[31m-  for (i = 0; i < num; i++) {[m
+[31m-    print(stringList[i].toString());[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-void runSmartCalculater() {[m
+[31m-  double num1 = promptDouble();[m
+[31m-  double num2 = promptDouble();[m
+[31m-  String operator = prompt("enter an operation {+,-,*,/}");[m
+[31m-  if (operator == "+") {[m
+[31m-    print(num1 + num2);[m
+[31m-    runSmartCalculater();[m
+[31m-  } else if (operator == "-") {[m
+[31m-    print(num1 - num2);[m
+[31m-    runSmartCalculater();[m
+[31m-  } else if (operator == "*") {[m
+[31m-    print(num1 * num2);[m
+[31m-    runSmartCalculater();[m
+[31m-  } else if (operator == "/") {[m
+[31m-    print(num1 / num2);[m
+[31m-    runSmartCalculater();[m
+[31m-  } else {[m
+[31m-    print("Invalid Operation");[m
+[31m-    runSmartCalculater();[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-double promptDouble() {[m
+[31m-  print('enter a number');[m
+[31m-  String? sign = stdin.readLineSync();[m
+[31m-  sign ??= "0.0"; //bind a default value.[m
+[31m-  return double.parse(sign);[m
+[31m-}[m
+[31m-[m
+[31m-String prompt(String question) {[m
+[31m-  print(question);[m
+[31m-  String? answer = stdin.readLineSync();[m
+[31m-  answer ??= "";[m
+[31m-  return answer;[m
+[31m-}[m
+[31m-[m
+[31m-void pyramidMaker(int numb) {[m
+[31m-  //for statement and function[m
+[31m-  for (var i = numb; i > 0; i--) {[m
+[31m-    print(' /|');[m
+[31m-    print('/||');[m
+[31m-    print('\||');[m
+[31m-    print(' \|');[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-void inputOutput() {[m
+[31m-  print("enter first number?");[m
+[31m-  int? numb1 = int.tryParse(stdin.readLineSync()!);[m
+[31m-  print("enter second number?");[m
+[31m-}[m
+[31m-[m
+[31m-void realMethod() {[m
+[31m-  print("Enter first number");[m
+[31m-  String? num1 = stdin.readLineSync();[m
+[31m-  print("Enter second number");[m
+[31m-  String? num2 = stdin.readLineSync();[m
+[31m-[m
+[31m-  int? n1 = int.tryParse(num1!);[m
+[31m-  int? n2 = int.tryParse(num2!);[m
+[31m-  if (n1 != null && n2 != null) {[m
+[31m-    print("My number is ${n1.toString()}");[m
+[31m-    print("${n1 + n2}");[m
+[31m-  } else {[m
+[31m-    n1 ??= 1;[m
+[31m-    n2 ??= 2;[m
+[31m-    print(n1 + n2);[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-void toplama() {[m
+[31m-  String? foo = 'a string';[m
+[31m-  String? bar; //null[m
+[31m-  bar ??= 'burhan';[m
+[31m-  String? baz = foo + '   ' + bar;[m
+[31m-  print("baz matched with foo" + baz);[m
+[31m-  print("bar matched with foo" + bar);[m
+[31m-  print(baz);[m
+[31m-}[m
+[31m-[m
+[31m-void repeating1() {[m
+[31m-  print('what is your name ?');[m
+[31m-  String? name = stdin.readLineSync();[m
+[31m-  print('Hello $name');[m
+[31m-}[m
+[31m-[m
+[31m-int add(int? numb1, int? numb2) {[m
+[31m-  numb1 ??= 0;[m
+[31m-  numb2 ??= 0;[m
+[31m-  return numb1 + numb2;[m
+[31m-}[m
+[31m-[m
+[31m-void codinAdd() {[m
+[31m-  print('enter first number');[m
+[31m-  String? numb1 = stdin.readLineSync();[m
+[31m-  print('enter second number');[m
+[31m-  String? numb2 = stdin.readLineSync();[m
+[31m-  int? i1 = int.tryParse(numb1!);[m
+[31m-  int? i2 = int.tryParse(numb2!);[m
+[31m-  i1 ??= 0;[m
+[31m-  i2 ??= 0;[m
+[31m-  String result = "${add(i1, i2)}";[m
+[31m-  print("result =  " + result);[m
+[31m-}[m
+[31m-[m
+[31m-void nullSafetyWithQuestionMark() {[m
+[31m-  //exclamation mark (!) is used to swear that I'm really sure that it's not a null.[m
+[31m-  int? myObject = null;[m
+[31m-  dynamic resOrgin =[m
+[31m-      myObject?.compareTo(2); //the one above and the one belove are the same.[m
+[31m-  dynamic result = (myObject != null) ? myObject.compareTo(2) : null;[m
+[31m-  print(resOrgin);[m
+[31m-}[m
+[31m-[m
+[31m-int? nullFunction(int arg1, int arg2) {[m
+[31m-  //try calling this method , writing nullFunction?.call(arg1,arg2);[m
+[31m-  return null;[m
+[31m-}[m
+[31m-[m
+[31m-/*late int numberOne; Bu şekilde birden fazla komut çalıştırabilirsin.[m
+[31m-    numberOne.compareTo(2)[m
+[31m-    ..isOdd[m
+[31m-    ..sign[m
+[31m-    ..hashCode[m
+[31m-    ..isInfinite[m
+[31m-    ..remainder(5)[m
+[31m-    ..toInt()[m
+[31m-    ..truncate()[m
+[31m-    ..isEven; */[m
+[31m-[m
+[31m-void PoemTraining() {[m
+[31m-  print('Siir olusturucuya hosgeldin...');[m
+[31m-  print('               🌼 ');[m
+[31m-  print('             🌼   ');[m
+[31m-  print('           🌼     ');[m
+[31m-  print('         🌼       ');[m
+[31m-  print('       🌼         ');[m
+[31m-  print('     🌼           ');[m
+[31m-  print('Bir çoğul cins ismi yaz(orn : agaclar,cicekler..etc)');[m
+[31m-  String? cinsIsim = stdin.readLineSync();[m
+[31m-  cinsIsim ??= "Agaclar"; //default[m
+[31m-  print('Bir mevsim yaz.');[m
+[31m-  String? mevsim = stdin.readLineSync();[m
+[31m-  mevsim ??= "sonbahar";[m
+[31m-  print('Bir sehir yaz.');[m
+[31m-  String? sehir = stdin.readLineSync();[m
+[31m-  sehir ??= "Istanbul";[m
+[31m-  print([m
+[31m-      'Bir seyin nerede oldugunu söyle(orn: mezarda,kutahyada,kulubede..etc)');[m
+[31m-  String? nerede = stdin.readLineSync();[m
+[31m-  nerede ??= "Karanlıkta";[m
+[31m-  print('Neye ne oluyor?(orn: yanıyor,kanıyor,yarılıyor...etc)');[m
+[31m-  String? nelerOluyor = stdin.readLineSync();[m
+[31m-  nelerOluyor ??= "yaniyor";[m
+[31m-  print('Bir kisi ismi alabilir miyim?');[m
+[31m-  String? kisiAdi = stdin.readLineSync();[m
+[31m-  kisiAdi ??= "Murat";[m
+[31m-  print('Bir cogul kisi ismi daha alabilir miyim?');[m
+[31m-  String? kisiAdi2 = stdin.readLineSync();[m
+[31m-  kisiAdi2 ??= "Huseyin";[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print('         🌸🌸  ${kisiAdi.toUpperCase()} SiiRi   🌸🌸');[m
+[31m-  print('');[m
+[31m-  print('');[m
+[31m-  print("     $cinsIsim ${mevsim}а hаzırlаnıyor...    💐");[m
+[31m-  print("     Bu sehir o eski $sehir midir..?         💐");[m
+[31m-  print("     $nerede bulutlar parcalanıyor...        💐");[m
+[31m-  print("     Sokаk lаmbаlаrı birden ${nelerOluyor}...💐");[m
+[31m-  print("     Ben sаnа mecburken $kisiAdi...         💐");[m
+[31m-  print('     Sen ise ${kisiAdi2} ile birliktesin...   💐');[m
+[31m-[m
+[31m-  /* [m
+[31m-      [m
+[31m-      #Ağаçlаr #sonbаhаr/а hаzırlаnıyor [m
+[31m-      Bu şehir o eski #İstаnbul mudur [m
+[31m-      #Kаrаnlıktа bulutlаr pаrçаlаnıyor [m
+[31m-      Sokаk lаmbаlаrı birden #yаnıyor [m
+[31m-      Kаldırımlаrdа #yаğmur kokusu [m
+[31m-      Ben sаnа mecburum # sen yoksun.[m
+[31m-[m
+[31m-[m
+[31m-       */[m
+[31m-}[m
+[31m-[m
+[31m-//MY OWN MATH QUIZ PROGRAM[m
+[31m-class Game {[m
+[31m-  int? challangeLevel;[m
+[31m-  Player? player;[m
+[31m-[m
+[31m-  Game() {[m
+[31m-    print("Welcome to the math quiz game..");[m
+[31m-    startGame();[m
+[31m-  }[m
+[31m-[m
+[31m-  void startGame() {[m
+[31m-    String? userName = player?.userName;[m
+[31m-[m
+[31m-    if (player == null) {[m
+[31m-      print("What is your name?");[m
+[31m-      userName = stdin.readLineSync();[m
+[31m-    }[m
+[31m-[m
+[31m-    if (userName != null && userName.length > 3 && userName.length < 15) {[m
+[31m-      player = Player(userName);[m
+[31m-      print("What is your math level ? (0,1,2,3)");[m
+[31m-      String? userLevel = stdin.readLineSync();[m
+[31m-      if (userLevel != null) {[m
+[31m-        int? level = int.tryParse(userLevel);[m
+[31m-        if (level != null && level < 4 && level >= 0) {[m
+[31m-          int? health = player?.health;[m
+[31m-          for (health; health! > 0; health) {[m
+[31m-            Question question = newQuestion(level);[m
+[31m-            print(question.question);[m
+[31m-            String? userAnswer = stdin.readLineSync();[m
+[31m-            double? ans = double.tryParse(userAnswer!);[m
+[31m-            if (ans != null) {[m
+[31m-              if (question.checkQuestion(ans)) {[m
+[31m-                player!.correctAnswer();[m
+[31m-              } else {[m
+[31m-                health = player!.madeMistake();[m
+[31m-                print("your health $health left");[m
+[31m-              }[m
+[31m-            }[m
+[31m-          }[m
+[31m-          int score = player!.correctAnswer() - 1;[m
+[31m-          print("your score = $score //");[m
+[31m-          print("Do you wanna try again $userName?");[m
+[31m-          String? check = stdin.readLineSync();[m
+[31m-          if (check != null && check == "yes") {[m
+[31m-            print("okey, I am making the game run.! , Good game $userName");[m
+[31m-            startGame();[m
+[31m-          } else {[m
+[31m-            print("good bye $userName");[m
+[31m-          }[m
+[31m-        } else {[m
+[31m-          print("invalid level");[m
+[31m-          startGame();[m
+[31m-        }[m
+[31m-      }[m
+[31m-    } else {[m
+[31m-      print("your name must be between 3 - 13 characters.");[m
+[31m-      startGame(); //start again.[m
+[31m-    }[m
+[31m-  }[m
+[31m-[m
+[31m-  Question newQuestion(int level) {[m
+[31m-    int? score = player?.score;[m
+[31m-    score ??= 0;[m
+[31m-    int? first;[m
+[31m-    int? second;[m
+[31m-    List<String> operators = [[m
+[31m-      "+",[m
+[31m-      "-",[m
+[31m-      "*",[m
+[31m-      "/",[m
+[31m-    ];[m
+[31m-    double? answer;[m
+[31m-[m
+[31m-    if (level == 0) {[m
+[31m-      first = Random().nextInt(10 + score * 5);[m
+[31m-      second = Random().nextInt(10 + score * 5);[m
+[31m-    } else if (level == 1) {[m
+[31m-      first = Random().nextInt(100 + score * 50);[m
+[31m-      second = Random().nextInt(100 + score * 50);[m
+[31m-    } else if (level == 2) {[m
+[31m-      first = Random().nextInt(1000 + score * 500);[m
+[31m-      second = Random().nextInt(1000 + score * 500);[m
+[31m-    } else if (level == 3) {[m
+[31m-      first = Random().nextInt(10000 + score * 5000);[m
+[31m-      second = Random().nextInt(10000 + score * 5000);[m
+[31m-    }[m
+[31m-    int i = Random().nextInt(4);[m
+[31m-    if (operators[i] == "+") {[m
+[31m-      answer = first!.toDouble() + second!.toDouble();[m
+[31m-    } else if (operators[i] == "-") {[m
+[31m-      answer = first!.toDouble() - second!.toDouble();[m
+[31m-    } else if (operators[i] == "*") {[m
+[31m-      answer = first!.toDouble() * second!.toDouble();[m
+[31m-    } else if (operators[i] == "/") {[m
+[31m-      answer = first! / second!;[m
+[31m-    }[m
+[31m-    if (first! > second!) {[m
+[31m-      String question =[m
+[31m-          first.toString() + " " + operators[i] + " " + second.toString();[m
+[31m-      Question QUE = Question(question, answer!);[m
+[31m-      return QUE;[m
+[31m-    } else {[m
+[31m-      return newQuestion(level);[m
+[31m-    }[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-class Player {[m
+[31m-  String userName = "";[m
+[31m-  int? score;[m
+[31m-  int? health;[m
+[31m-[m
+[31m-  Player(String userName) {[m
+[31m-    this.userName = userName;[m
+[31m-    health = 3;[m
+[31m-    score = 0;[m
+[31m-  }[m
+[31m-[m
+[31m-  int madeMistake() {[m
+[31m-    health = health! - 1;[m
+[31m-    print("this is incorrect.. unfortunately..");[m
+[31m-    return health!;[m
+[31m-  }[m
+[31m-[m
+[31m-  int correctAnswer() {[m
+[31m-    score = score! + 1;[m
+[31m-    print("this is correct , other one is coming...");[m
+[31m-    return score!;[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-class Question {[m
+[31m-  String? question;[m
+[31m-  double? answer;[m
+[31m-[m
+[31m-  Question(String question, double answer) {[m
+[31m-    this.question = question;[m
+[31m-    this.answer = answer;[m
+[31m-  }[m
+[31m-[m
+[31m-  bool checkQuestion(double answer) {[m
+[31m-    return this.answer == answer;[m
+[31m-  }[m
+[31m-}[m
+[1mdiff --git a/bin/3nd_async_sync_await_future.dart b/bin/3nd_async_sync_await_future.dart[m
+[1mdeleted file mode 100644[m
+[1mindex cc4116c..0000000[m
+[1m--- a/bin/3nd_async_sync_await_future.dart[m
+[1m+++ /dev/null[m
+[36m@@ -1,69 +0,0 @@[m
+[31m-//link : https://dartpad.dev/49e5d429afe676479a4facf04d4c9b14[m
+[31m-[m
+[31m-[m
+[31m-void main() {[m
+[31m-[m
+[31m-  // syncronousTasksExecuter();[m
+[31m-  asyncronousTaskExecuter();[m
+[31m-  [m
+[31m-  // // // // // // // // // //[m
+[31m-  [m
+[31m- // waitedTaskForLongRunningProcess();[m
+[31m-  [m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-void syncronousTasksExecuter() {[m
+[31m-  print("\n\n\n\n STARTED SYNC PROCESS \n");[m
+[31m-  //sync[m
+[31m-  task1();[m
+[31m-  task2();[m
+[31m-  task3();[m
+[31m-}[m
+[31m-[m
+[31m-void asyncronousTaskExecuter() {[m
+[31m-   print("\n\n\n\n STARTED ASYNC PROCESS \n");[m
+[31m-  //async[m
+[31m-  task1();[m
+[31m-  futureTask2(printing : "ASYNC's successfuly running...");[m
+[31m-  task2();[m
+[31m-  task3();[m
+[31m-}[m
+[31m-[m
+[31m-void waitedTaskForLongRunningProcess() async {[m
+[31m-   print("\n\n\n\n AWAITED ASYNC PROCESS \n");[m
+[31m-  task1();[m
+[31m-  String text = await futureTask2();[m
+[31m-  stringPrinter(text : text);[m
+[31m-  task2();[m
+[31m-  task3();[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-void task1 (){[m
+[31m-  print("TASK 1st was called.");[m
+[31m-}[m
+[31m-[m
+[31m-void task2 (){[m
+[31m-  print("TASK 2nd was called.");[m
+[31m-}[m
+[31m-[m
+[31m-Future<String> futureTask2 ({String? printing = null}) async {[m
+[31m-  Duration fiveSeconds = Duration(seconds: 5);[m
+[31m-  String text = "";[m
+[31m-  await Future.delayed(fiveSeconds, (){[m
+[31m-    text = "futureTask2";[m
+[31m-  });[m
+[31m-  if(printing != null){[m
+[31m-    print(printing);[m
+[31m-  }[m
+[31m-  return text;[m
+[31m-}[m
+[31m-[m
+[31m-void task3 (){[m
+[31m-   print("TASK 3th was called.");[m
+[31m-}[m
+[31m-[m
+[31m-void stringPrinter({required String text}){[m
+[31m-  print('$text was seen!');[m
+[31m-}[m
+\ No newline at end of file[m
