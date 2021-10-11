@@ -1,4 +1,7 @@
-"# when I forget the fundamental of programming in dart , I can take a look here and I will how to code in dart." 
+# The Dart Programming Language Basics
+
+- you can find the tutorials in the bin folder. I will try to update them whenever it's possible.
+
 <img width="597" alt="1" src="https://user-images.githubusercontent.com/81476500/126040973-b2dfbb17-fb58-4faa-bc7a-64b4bbd5760c.png">
 <img width="629" alt="2" src="https://user-images.githubusercontent.com/81476500/126040977-5193c3e4-7dd1-4025-ba4e-ca0c598f66d7.png">
 <img width="590" alt="3" src="https://user-images.githubusercontent.com/81476500/126040982-bc3ff661-4998-49eb-8f5c-a79af64889cb.png">
@@ -8,7 +11,7 @@
 
 
 _____________________________________________________________________________________________________________________________
-# August the 18 in 2021; 
+## August the 18 in 2021; 
 
  (enums,first order functions,Dart Maps,Tenary Operations etc...)
 
@@ -16,10 +19,19 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________________________
 
 _____________________________________________________________________________________________________________________________
-# September the 7 in 2021; 
+## September the 7 in 2021; 
 
  (async , sync tasks, await - async  , future class...)
 
 //link = : https://dartpad.dev/49e5d429afe676479a4facf04d4c9b14
 ____________________________________________________________________________________________________________________________
+
+_____________________________________________________________________________________________________________________________
+## October the 11 in 2021; 
+
+ (streams and Stream builder.)
+
+//link = : https://dartpad.dev/49e5d429afe676479a4facf04d4c9b14
+____________________________________________________________________________________________________________________________
+
 
